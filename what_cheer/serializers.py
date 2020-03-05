@@ -5,7 +5,7 @@ class EntrySerializer(serializers.ModelSerializer):
     date = serializers.DateField(format="%d-%m-%Y", input_formats=['%d-%m-%Y', 'iso-8601'])
     class Meta:
         model = Entry
-        fields = ('id', 'date', 'entry')
+        fields = ('id', 'date', 'entry', 'user_id')
 
 class PromptSerializer(serializers.ModelSerializer):
 
