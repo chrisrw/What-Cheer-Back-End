@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'what_cheer',
-    'rest_framework'
+    'rest_framework',
+    'accounts'
 ]
+LOGIN_REDIRECT_URL = '/'
 DATE_INPUT_FORMATS = ['%d-%m-%Y']
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
