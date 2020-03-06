@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 from .serializers import UserSerializer, UserSerializerWithToken
 # Create your views here.
 
-class UserList(APIview):
+class UserList(APIView):
      permission_classes = (permissions.AllowAny,)
      def post(self, request, format=None):
         serializer = UserSerializerWithToken(data=request.data)
@@ -16,6 +16,7 @@ class UserList(APIview):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['GET'])
 def current_user(request):

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'what_cheer',
     'rest_framework',
-    'user',
+    'user.apps.UserConfig',
     'corsheaders'
 ]
 LOGIN_REDIRECT_URL = '/'
@@ -140,7 +140,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CORS_ORIGIN_WHITELIST = ('http://localhost:3000')
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:8000",
+    "http://localhost:3000"
+]
+CORS_ORIGIN_ALLOW_ALL = True
+ROOT_URLCONF = 'what_cheer_django.urls'
 
 JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'what_cheer_django.utils.my_jwt_response_handler'
