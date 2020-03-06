@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'what_cheer',
     'rest_framework',
-    'accounts'
+    'user'
 ]
 LOGIN_REDIRECT_URL = '/'
 DATE_INPUT_FORMATS = ['%d-%m-%Y']

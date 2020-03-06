@@ -13,7 +13,3 @@ class PromptSerializer(serializers.ModelSerializer):
         model = Prompt
         fields = ('id', 'prompt')
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ('id', 'username', 'email', 'password')
