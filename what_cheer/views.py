@@ -8,7 +8,7 @@ class EntryList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
-            serializer.save(owner=self.request.user)
+        serializer.save(owner=self.request.user)
 class EntryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer
@@ -18,4 +18,8 @@ class PromptDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+
+
 
