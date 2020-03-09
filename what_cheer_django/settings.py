@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'user.apps.UserConfig',
     'corsheaders',
-    'social_django'
+    
 ]
 LOGIN_REDIRECT_URL = '/'
 DATE_INPUT_FORMATS = ['%d-%m-%Y']
@@ -57,12 +57,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ]
 }
-AUTHENTICATION_BACKENDS = (
 
-    'social_core.backends.facebook.FacebookOAuth2',
-
-    'django.contrib.auth.backends.ModelBackend',
-)
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -72,7 +67,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware'
 ]
 
 ROOT_URLCONF = 'what_cheer_django.urls'
@@ -88,8 +82,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social_django.context_processors.backends', 
-                'social_django.context_processors.login_redirect',
             ],
         },
     },
