@@ -2,7 +2,8 @@ from rest_framework import serializers, generics, permissions
 from .models import Entry, Prompt
 from django.contrib.auth.models import User
 class EntrySerializer(serializers.ModelSerializer):
-    date = serializers.DateField(format="%d-%m-%Y", input_formats=['%d-%m-%Y', 'iso-8601'])
+    date = serializers.DateField(format="%m-%d-%Y", input_formats=['%m-%d-%Y', 'iso-8601'])
+    owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Entry
         fields = ('id', 'date', 'entry', 'owner',)
