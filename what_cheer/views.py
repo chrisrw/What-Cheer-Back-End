@@ -2,6 +2,7 @@ from rest_framework import generics, permissions
 from .serializers import EntrySerializer, PromptSerializer
 from .models import Entry, Prompt
 
+# The following classes handle the CRUD operations for the entries and prompt (for prompt, we just want to get one)
 class EntryList(generics.ListCreateAPIView):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer

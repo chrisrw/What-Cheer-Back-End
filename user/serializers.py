@@ -7,6 +7,7 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('username',)
 
+# UserSerializerWithToken will be used in signups. When a user signs up, the server will respond with user data as well as the token, which will be stored in the browser for continued authentication. 
 class UserSerializerWithToken(serializers.ModelSerializer):
 
     token = serializers.SerializerMethodField()

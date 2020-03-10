@@ -150,7 +150,7 @@ CORS_ORIGIN_WHITELIST = [
 ]
 CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'what_cheer_django.urls'
-
+# linking to utils.py and modifying JWT settings
 JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'what_cheer_django.utils.my_jwt_response_handler',
     'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=120),
