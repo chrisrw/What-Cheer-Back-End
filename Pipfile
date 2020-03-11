@@ -17,7 +17,9 @@ whitenoise = "*"
 dj-database-url = "*"
 django-heroku = "*"
 python-decouple = "*"
-
+boto3 = "*"
+django-storages = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.8.1"

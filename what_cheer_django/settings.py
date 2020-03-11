@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import datetime
 import django_heroku
+import boto3
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'user.apps.UserConfig',
     'corsheaders',
+    'storages',
     
 ]
 LOGIN_REDIRECT_URL = '/'
@@ -159,3 +161,14 @@ JWT_AUTH = {
 
 }
 django_heroku.settings(locals())
+
+STATIC_URL = '/static/'
+# AWS S3 file upload required settings
+MEDIA_URL =  '/media/'
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'journalpic/')
+# Get these from .env file or from .aws/credentials file
+# AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+# AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = 'what-cheer'
+# Set the default storage to use s3
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

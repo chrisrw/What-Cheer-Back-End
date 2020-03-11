@@ -6,9 +6,10 @@ from django.contrib.auth.models import User
 class EntrySerializer(serializers.ModelSerializer):
     date = serializers.DateField()
     owner = serializers.ReadOnlyField(source='owner.username')
+    image = serializers.ImageField()
     class Meta:
         model = Entry
-        fields = ('id', 'date', 'entry', 'owner',)
+        fields = ('id', 'date', 'entry', 'owner', 'image')
 
 class PromptSerializer(serializers.ModelSerializer):
 
