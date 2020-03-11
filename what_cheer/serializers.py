@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 # Entry information including a month-date-year format and linking user to entries
 class EntrySerializer(serializers.ModelSerializer):
-    date = serializers.DateField(format="%m-%d-%Y", input_formats=['%m-%d-%Y', 'iso-8601'])
+    date = serializers.DateField()
     owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Entry

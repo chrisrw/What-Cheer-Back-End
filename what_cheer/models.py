@@ -8,9 +8,11 @@ class Entry(models.Model):
         'auth.User', on_delete=models.CASCADE, related_name="entries")
     date = models.DateField(default=date.today)
     entry = models.TextField()
+
     
 
 
 class Prompt(models.Model):
     prompt = models.TextField()
 
+ 
