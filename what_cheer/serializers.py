@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class EntrySerializer(serializers.ModelSerializer):
     date = serializers.DateField()
     owner = serializers.ReadOnlyField(source='owner.username')
-    image = serializers.ImageField()
+    image = serializers.ImageField(max_length=None, use_url=True, required=False)
     class Meta:
         model = Entry
         fields = ('id', 'date', 'entry', 'owner', 'image')
